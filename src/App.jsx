@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import valentine from "./assets/valentine.png";
 
 /* 🌈 Background Gradients */
 const gradients = [
@@ -15,139 +14,150 @@ const gradients = [
 /* ❤️ Heart Types */
 const heartTypes = ["❤", "💖", "💕", "💗", "💘", "💝", "💓", "💞"];
 
+/* 💖 YES WORDS – 30 */
+const yesWords = [
+  "Yes 💖","Of course 😍","Always ❤️","Forever 💍","100% Yes 💕",
+  "Yesss 🥰","Mine 💘","Absolutely 💗","Only You 💞","My Love 😘",
+  "I Choose You 💓","With You 💝","Take My Heart ❤️‍🔥","No Doubt 😍",
+  "Pink Promise 💖","Endless Love ♾️","Soulmate 💑","Crazy For You 🤭",
+  "My Person 🫶","Heart Says Yes 💓","Yes Babe 😘","You & Me 💕",
+  "Always Yours 💝","Yes My Love 💗","Together Forever 💍",
+  "Chosen 💖","Love Wins ❤️","I’m In 😍","Yes Cutie 🥹","Final Yes 💘",
+];
+
+/* 😢 NO WORDS */
+const noWords = [
+  "No 😢","Please No 🥺","Not Today 💔","Hmm No 😞","I’m Sad 😭","Don’t Ask 🙈",
+];
+
+/* 💬 QUESTIONS – 30 */
+const texts = [
+  "Will you say YES? 💗",
+  "Can I be yours? 🥺",
+  "Do you love me? 💕",
+  "Will you choose me? 💘",
+  "Can we be together forever? 💑",
+  "Am I your Valentine? 🌹",
+  "Will you hold my hand? 🤝",
+  "Do I make you smile? 😊",
+  "Will you stay with me always? 💞",
+  "Can I keep you forever? ♾️",
+  "Are you my soulmate? 💍",
+  "Will you be mine? 💓",
+  "Do you feel the same for me? 💖",
+  "Will you trust me with your heart? 🫶",
+  "Can I call you mine? 😍",
+  "Are we meant to be together? ✨",
+  "Will you say YES today? 💗",
+  "Do you like me a little? 🙈",
+  "Will you love me always? ❤️",
+  "Can I steal your heart? 💘",
+  "Will you walk with me in life? 💑",
+  "Do you choose us? 💞",
+  "Will you accept my heart? 💝",
+  "Are you ready for love? 💕",
+  "Will you be my forever? ♾️",
+  "Can we start our love story? 📖💖",
+  "Do you want this love? 💓",
+  "Will you say yes to me? 😘",
+  "Is your answer YES? 💗",
+  "Final question… will you marry me? 💍💖",
+];
+
 /* ❄️❤️ Heart Snow */
 const HeartSnow = () => (
   <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-    {[...Array(50)].map((_, i) => {
-      const heart = heartTypes[Math.floor(Math.random() * heartTypes.length)];
-      return (
-        <motion.div
-          key={i}
-          initial={{
-            y: -50,
-            x: Math.random() * window.innerWidth,
-            opacity: 0,
-            scale: Math.random() * 0.6 + 0.6,
-            rotate: Math.random() * 360,
-          }}
-          animate={{
-            y: window.innerHeight + 100,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 6 + Math.random() * 6,
-            repeat: Infinity,
-            delay: Math.random() * 4,
-          }}
-          className="absolute text-2xl"
-        >
-          {heart}
-        </motion.div>
-      );
-    })}
+    {[...Array(80)].map((_, i) => (
+      <motion.div
+        key={i}
+        initial={{
+          y: -50,
+          x: Math.random() * window.innerWidth,
+          opacity: 0,
+          scale: Math.random() * 0.6 + 0.6,
+        }}
+        animate={{ y: window.innerHeight + 100, opacity: 1 }}
+        transition={{
+          duration: 4 + Math.random() * 4,
+          repeat: Infinity,
+          delay: Math.random() * 2,
+          ease: "linear",
+        }}
+        className="absolute text-2xl"
+      >
+        {heartTypes[Math.floor(Math.random() * heartTypes.length)]}
+      </motion.div>
+    ))}
   </div>
 );
 
 /* 🌸 Layout */
 const Layout = ({ children, bg }) => (
-  <div
-    className={`min-h-screen flex items-center justify-center bg-gradient-to-br ${bg} transition-all duration-700 px-4`}
-  >
+  <div className={`min-h-screen flex items-center justify-center bg-gradient-to-br ${bg} px-4`}>
     <HeartSnow />
-    <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="relative z-10 w-full max-w-sm bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-6 text-center"
-    >
+    <div className="relative z-10 w-full max-w-sm bg-white/5 backdrop-blur-3xl rounded-3xl p-6 text-center border border-white/15">
       {children}
-    </motion.div>
+    </div>
   </div>
 );
 
-/* 🧸 Animated Teddy */
+/* 🧸 Teddy */
 const Teddy = () => (
   <motion.img
-    src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQUbJjZoVIldiGz13evb3V_ZZf3_-CxtOsmw5j6WpQVSIsAPvr5E7v8kZVc22qIfl_82SY-wxH4PP9tXIttkIEWa10hZ02Fe8U_sscmOy9ROEDkcXJBGUu9oQ"
-    alt="teddy"
-    className="w-40 h-40 rounded-full mx-auto mb-4 drop-shadow-xl"
-    animate={{
-      y: [0, -12, 0],
-      scale: [1, 1.03, 1],
-      rotate: [0, 2, -2, 0],
-    }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlluD-CEn8cfQyIaUWtTOLf1KHVbAvtmT4dA&s"
+    className="w-40 h-40 rounded-full mx-auto mb-4"
+    animate={{ y: [0, -12, 0] }}
+    transition={{ duration: 3, repeat: Infinity }}
   />
 );
 
-/* 😈 No Button */
+/* 😢 No Button */
 const NoButton = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [text, setText] = useState("No 😢");
+
+  const move = () => {
+    setText(noWords[Math.floor(Math.random() * noWords.length)]);
+    setPos({ x: Math.random() * 200 - 100, y: Math.random() * 120 - 60 });
+  };
 
   return (
     <motion.button
-      onMouseEnter={() =>
-        setPos({
-          x: Math.random() * 260 - 130,
-          y: Math.random() * 160 - 80,
-        })
-      }
+      onMouseEnter={move}
+      onClick={move}
       animate={pos}
-      transition={{ type: "spring", stiffness: 600, damping: 12 }}
-      className="absolute px-5 py-2 rounded-full bg-gray-300 text-gray-800 font-semibold shadow-md"
+      className="px-6 py-2 rounded-full bg-gray-300 font-semibold"
     >
-      No 🙈
+      {text}
     </motion.button>
   );
 };
 
 /* 💖 Question Card */
-const QuestionCard = ({ text, yesLink }) => {
-  const [bg, setBg] = useState(
-    gradients[Math.floor(Math.random() * gradients.length)]
-  );
-  const [textKey, setTextKey] = useState(0);
+const QuestionCard = ({ startIndex, yesLink }) => {
+  const [bg, setBg] = useState(gradients[Math.floor(Math.random() * gradients.length)]);
+  const [yesIndex, setYesIndex] = useState(0);
+  const [qIndex, setQIndex] = useState(startIndex);
 
   const handleYes = () => {
+    setYesIndex((p) => (p + 1) % yesWords.length);
+    setQIndex((p) => (p + 1) % texts.length);
     setBg(gradients[Math.floor(Math.random() * gradients.length)]);
-    setTextKey((prev) => prev + 1);
   };
 
   return (
     <Layout bg={bg}>
       <Teddy />
+      <h1 className="text-2xl font-extrabold text-pink-600">Valentine Princess 💕</h1>
+      <p className="mt-3 text-gray-800 text-sm">{texts[qIndex]}</p>
 
-      <motion.h1
-        key={`title-${textKey}`}
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-2xl font-extrabold text-pink-600"
-      >
-        Valentine Princess 💕
-      </motion.h1>
-
-      <motion.p
-        key={`text-${textKey}`}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-gray-700 mt-3 text-sm leading-relaxed"
-      >
-        {text}
-      </motion.p>
-
-      <div className="relative mt-10 h-16 flex justify-center items-center gap-6">
+      <div className="mt-10 flex flex-col gap-5 items-center">
         <Link
           to={yesLink}
           onClick={handleYes}
-          className="px-7 py-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold shadow-lg active:scale-95 hover:scale-110 transition"
+          className="w-48 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold"
         >
-          Yes 💖
+          {yesWords[yesIndex]}
         </Link>
         <NoButton />
       </div>
@@ -155,59 +165,13 @@ const QuestionCard = ({ text, yesLink }) => {
   );
 };
 
-/* 💬 Questions */
-const texts = [
-  "Will you be my Valentine?",
-  "Can I keep you forever?",
-  "Do you feel the magic too?",
-  "Will you hold my hand always?",
-  "Can we watch anime together?",
-  "Will you smile with me daily?",
-  "Can I be your comfort?",
-  "Will you trust me?",
-  "Can we grow together?",
-  "Will you stay with me?",
-  "Do you like my heart?",
-  "Can I make you happy?",
-  "Will you laugh with me?",
-  "Can I call you mine?",
-  "Will you walk beside me?",
-  "Do you feel loved?",
-  "Can I protect you?",
-  "Will you choose me?",
-  "Can I be your safe place?",
-  "Will you never leave?",
-  "Do you believe in us?",
-  "Can we dream together?",
-  "Will you share your world?",
-  "Can I be your Valentine Prince?",
-  "Will you say yes again?",
-  "Can I keep asking you?",
-  "Will you still smile?",
-  "Do you feel butterflies?",
-  "Can we be forever?",
-  "Will you say YES?",
-];
-
 /* 🏠 Home */
-const Home = () => (
-  <QuestionCard
-    text="Hi… I have something really special to ask you 🥺💗"
-    yesLink="/q/1"
-  />
-);
+const Home = () => <QuestionCard startIndex={0} yesLink="/q/1" />;
 
 /* 💍 Final */
 const Final = () => (
   <Layout bg="from-pink-400 via-rose-300 to-red-400">
-    <motion.h1
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ type: "spring", stiffness: 150 }}
-      className="text-white font-extrabold text-3xl drop-shadow-lg"
-    >
-      She Said YES 💍💖
-    </motion.h1>
+    <h1 className="text-white text-3xl font-extrabold">She Said YES 💍💖</h1>
   </Layout>
 );
 
@@ -217,16 +181,11 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {texts.map((t, i) => (
+        {texts.map((_, i) => (
           <Route
             key={i}
             path={`/q/${i + 1}`}
-            element={
-              <QuestionCard
-                text={t}
-                yesLink={i === texts.length - 1 ? "/final" : `/q/${i + 2}`}
-              />
-            }
+            element={<QuestionCard startIndex={i} yesLink={i === texts.length - 1 ? "/final" : `/q/${i + 2}`} />}
           />
         ))}
         <Route path="/final" element={<Final />} />
