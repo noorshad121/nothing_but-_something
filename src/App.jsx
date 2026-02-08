@@ -68,7 +68,7 @@ const Layout = ({ children, bg }) => (
 /* 🧸 Animated Teddy */
 const Teddy = () => (
   <motion.img
-    src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQUbJjZoVIldiGz13evb3V_ZZf3_-CxtOsmw5j6WpQVSIsAPvr5E7v8kZVc22qIfl_82SY-wxH4PP9tXIttkIEWa10hZ02Fe8U_sscmOy9ROEDkcXJBGUu9oQ"
+    src="https://www.google.com/aclk?sa=L&ai=DChsSEwiZtOOhxcqSAxW-gUsFHbSiMZQYACICCAEQLBoCc2Y&ae=1&co=1&ase=2&gclid=Cj0KCQiAhaHMBhD2ARIsAPAU_D4mkZyy_62U_4roq3QCa8eSm_rsSepguoU57ToaiLlug_--I0-h8Y0aAhmPEALw_wcB&sph=&ei=JtiIaYeWN4SfseMPt5y9qAc&cid=CAASuwHkaAyT8Xkcq-bLKKWASNpeG6YntlTyw2giqQyT5GwZF7QuqvYiZV8buGYX27rLAUtrF7SXZjZzSWeWEdG7G8KeCYJsETXtpU-Fu4WOk7z2FzEB40tu0W7FqSR44LtB6dj64Yzh1AyUo0DK4WoxTRsvEfOYV6uxijGyYvNTnQui6evueKpEQ0gg_Vhas7vcOX6bGTf0uzQXJCcWRshHptDwIpC_oA-QdrU1B5rFn97PAXXGNrGC7s59dszt&cce=2&category=acrcp_v1_34&sig=AOD64_2JQwvHDDSKNDEspwVIHX9H-O4vuQ&ctype=5&q=&nis=4&sqi=2&ved=2ahUKEwiHwd6hxcqSAxWET2wGHTdOD3UQwg8oAHoECAwQZg&adurl=https://www.amazon.in/Dimpy-Stuff-Penguin-Cuddly-Plush/dp/B0FPQPXTSV/ref%3Dasc_df_B0FPQPXTSV%3Fmcid%3Da3a4c15147bb39eda09583f4d738fae8%26tag%3Dgoogleshopmob-21%26linkCode%3Ddf0%26hvadid%3D759948544728%26hvpos%3D%26hvnetw%3Dg%26hvrand%3D274895548992401791%26hvpone%3D%26hvptwo%3D%26hvqmt%3D%26hvdev%3Dm%26hvdvcmdl%3D%26hvlocint%3D%26hvlocphy%3D9300973%26hvtargid%3Dpla-2449775153753%26psc%3D1%26gad_source%3D1"
     alt="teddy"
     className="w-40 h-40 rounded-full mx-auto mb-4 drop-shadow-xl"
     animate={{
