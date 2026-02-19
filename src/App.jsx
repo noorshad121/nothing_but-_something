@@ -1,36 +1,35 @@
           import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-/* 🎨 Background Gradients */
-const gradients = [
-  "from-blue-400 via-purple-400 to-pink-400",
-  "from-pink-400 via-rose-400 to-red-400",
-  "from-purple-400 via-pink-400 to-indigo-400",
-];
-
-/* 🎉 Birthday Messages */
-const messages = [
-  "Ready to celebrate your birthday? 🎉",
-  "Another year older, but still crazy 😎",
-  "Cake cutting kab hai? 🎂",
-  "Party kaha hai bro? 🥳",
-  "Gift ready hai kya? 🎁",
-  "Smile karo birthday boy 😁",
-  "Aaj full masti karenge 🔥",
-  "Last question… ready for surprise? 🎊",
-];
-
-/* 🎈 Fun Button Words */
-const buttonWords = [
-  "Next 🎉",
-  "Let’s Go 🥳",
-  "Cake Time 🎂",
-  "Full Enjoy 😎",
-  "Celebrate 🔥",
-  "Final Surprise 🎊",
-];
-
 export default function App() {
+  const gradients = [
+    "from-blue-500 via-purple-500 to-pink-500",
+    "from-indigo-500 via-purple-500 to-rose-500",
+    "from-purple-600 via-pink-500 to-red-500",
+  ];
+
+  const messages = [
+    "On this special day, I just want to say thank you for being in my life 🤍",
+    "Some friends come and go, but you stayed and became family ❤️",
+    "You stood with me in my worst days, and I’ll never forget that 💙",
+    "Your support means more than you think 💫",
+    "Life feels easier knowing you are there 💛",
+    "You are not just my friend, you are my strength 💪",
+    "No matter where life takes us, our bond will never change 🤝",
+    "Today is a celebration of the amazing person you are 🌟",
+    "I’m lucky to have a brother like you 💖",
+    "Final message… I’m always with you, no matter what 🤍",
+  ];
+
+  const buttonWords = [
+    "Continue 🤍",
+    "Next 💙",
+    "Read More ❤️",
+    "For You 💫",
+    "One More 💛",
+    "Last Message 🌟",
+  ];
+
   const [index, setIndex] = useState(0);
   const [bg, setBg] = useState(gradients[0]);
   const [showFinal, setShowFinal] = useState(false);
@@ -51,24 +50,24 @@ export default function App() {
         {!showFinal ? (
           <>
             <motion.img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLypdsTuEUCnOAgMf3EYoo4kph2QNjDJwmA&s"
-              alt="teddy"
-              className="w-36 h-36 rounded-full mx-auto mb-4"
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+              alt="friendship"
+              className="w-36 h-36 rounded-full mx-auto mb-4 shadow-lg"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
 
             <h1 className="text-2xl font-bold text-white">
-              Happy Birthday Bro 🎂🎉
+              Happy Birthday Bro 🎂
             </h1>
 
-            <p className="mt-4 text-white text-sm">
+            <p className="mt-4 text-white text-sm leading-relaxed">
               {messages[index]}
             </p>
 
             <button
               onClick={handleClick}
-              className="mt-8 px-6 py-2 rounded-full bg-white text-purple-600 font-bold"
+              className="mt-8 px-6 py-2 rounded-full bg-white text-purple-600 font-semibold"
             >
               {buttonWords[index % buttonWords.length]}
             </button>
@@ -88,8 +87,13 @@ export default function App() {
               Happy Birthday My Brother 🎂
             </h1>
 
-            <p className="mt-4 text-xl text-white font-semibold">
-              Love You Bro ❤️🔥
+            <p className="mt-4 text-white text-lg">
+              No matter what happens in life,
+              I will always stand with you.
+            </p>
+
+            <p className="mt-3 text-xl text-white font-semibold">
+              Love You Bro ❤️
             </p>
           </>
         )}
@@ -97,4 +101,5 @@ export default function App() {
       </div>
     </div>
   );
-}    
+}
+        
