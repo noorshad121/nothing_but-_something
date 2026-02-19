@@ -15,7 +15,7 @@ export default function App() {
     "this yr i mmet you and you become not just my friend my family",
     "Today is a celebration of the amazing person you are 🌟",
     "I’m lucky to have a brother like you 💖",
-    "Final message… I’m always with you, no matter what 🤍",
+    "My last words… you are my brother, and that will never change. ❤️",
   ];
 
   const buttonWords = [
