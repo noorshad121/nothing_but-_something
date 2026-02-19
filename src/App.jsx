@@ -11,13 +11,6 @@ export default function App() {
     "from-purple-600 via-pink-500 to-red-500",
   ];
 
-  const messages = [
-    "this yr i mmet you and you become not just my friend my family",
-    "Today is a celebration of the amazing person you are 🌟",
-    "I’m lucky to have a brother like you 💖",
-    "My last words… you are my brother, and that will never change. ❤️",
-  ];
-
   const buttonWords = [
     "Continue 🤍",
     "Next 💙",
