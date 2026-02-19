@@ -12,9 +12,9 @@ export default function App() {
   ];
 
   const messages = [
-    "This year I met you, and you became more than just a friend — you became my family. ❤️",
-    "No matter where life takes us, our bond will never change 🤝",
+    "this yr i mmet you and you become not just my friend my family",
     "Today is a celebration of the amazing person you are 🌟",
+    "I’m lucky to have a brother like you 💖",
     "Final message… I’m always with you, no matter what 🤍",
   ];
 
@@ -132,4 +132,4 @@ export default function App() {
       </div>
     </div>
   );
-}      
+}
